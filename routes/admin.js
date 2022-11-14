@@ -10,7 +10,7 @@ router.get("/add", (req, res, next) => {
 });
 
 router.post("/product", (req, res) => {
-  res.redirect("/");
+  res.redirect("/shop");
   console.log(req.body);
 });
 
