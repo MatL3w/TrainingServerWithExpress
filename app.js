@@ -13,7 +13,7 @@ app.use('/admin',AdminRoutes);
 app.use('/shop',shopRoutes);
 
 app.use((req,res, next) =>{
-    res.sendStatus(404);
+   // res.sendStatus(404);
 });
 
 app.listen(3000);
