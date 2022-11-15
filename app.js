@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const fs = require("fs");
 const http = require('http');
@@ -13,7 +14,7 @@ app.use('/admin',AdminRoutes);
 app.use('/shop',shopRoutes);
 
 app.use((req,res, next) =>{
-   // res.sendStatus(404);
+    res.status(404).sendFile(path.join(__dirname,'views','404.html'));
 });
 
 app.listen(3000);
