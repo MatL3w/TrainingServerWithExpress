@@ -13,8 +13,9 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/admin',AdminRoutes);
 app.use('/shop',shopRoutes);
+app.use(express.static(path.join(rootDir,'public')));
 
-app.use((req,res, next) =>{
+app.use((req,res, next) =>{reliesdummy
     res.status(404).sendFile(path.join(rootDir,'views','404.html'));
 });
 
