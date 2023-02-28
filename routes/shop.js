@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.use("/", (req, res, next) => {
   console.log(AdminData.products);
-  res.sendFile(path.join(rootDir,'views','shop.html'));
+  res.render('shop',{prods:AdminData.products,docTitle:"Shoppy"});
   //next();
 });
 
