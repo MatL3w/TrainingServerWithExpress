@@ -9,7 +9,6 @@ const rootDir = require('./util/path')
 
 const app = express();
 
-
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/admin',AdminData.router);
 app.use('/shop',shopRoutes);
