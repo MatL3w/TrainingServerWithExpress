@@ -5,7 +5,6 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const AdminData = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
-const rootDir = require('./util/path');
 const ejs = require("ejs");
 
 const app = express();
@@ -16,7 +15,7 @@ app.set('views','views');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/admin',AdminData.router);
 app.use('/shop',shopRoutes);
-app.use(express.static(path.join(rootDir,'public')));
+app.use(express.static(path.join(__dirname,'public')));
 
 app.use((req,res, next) =>{
     res.status(404).render('404',{pageTitle:"404",path: '/'});
