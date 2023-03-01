@@ -8,6 +8,7 @@ const shopRoutes = require('./routes/shop');
 const ejs = require("ejs");
 const errorController = require('./controllers/error');
 const productController = require('./controllers/products');
+// const Product = require('./models/product');
 
 const app = express();
 
@@ -22,4 +23,6 @@ app.use(errorController.get404);
 
 app.listen(3000);
 
-console.log(productController);
+// setInterval(()=>{
+// console.log(Product.fetchAll());
+// },1000)
