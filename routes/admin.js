@@ -8,11 +8,7 @@ const products = [];
 
 router.get("/add-product",productController.getAddProduct);
 
-router.post("/add-product", (req, res) => {
-  products.push({title: req.body.title})
-  console.log(req.body);
-  res.redirect('/shop');
-});
+router.post("/add-product",productController.postAddProduct);
 
 exports.router = router;
 exports.products = products;
