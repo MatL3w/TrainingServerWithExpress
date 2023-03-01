@@ -1,13 +1,13 @@
 const express = require("express");
 const path = require('path');
-const AdminData= require('./admin');
+const productController = require("../controllers/products");
 
 const router = express.Router();
 
 router.use("/", (req, res, next) => {
-  console.log(AdminData.products);
+  console.log(productController.products);
   res.render('shop',{
-    prods:AdminData.products,
+    prods:productController.products,
     pageTitle:"Shoppy",
     path: '/shop'
   });

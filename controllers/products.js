@@ -1,5 +1,6 @@
 const products = [];
 
+
 exports.getAddProduct = (req, res, next) => {
   res.render("add-product", {
     pageTitle: "Shoppy",
@@ -11,3 +12,4 @@ exports.postAddProduct = (req, res) => {
   console.log(req.body);
   res.redirect("/shop");
 };
+exports.products;
