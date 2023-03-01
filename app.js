@@ -3,7 +3,7 @@ const express = require('express');
 const fs = require("fs");
 const http = require('http');
 const bodyParser = require('body-parser');
-const AdminData = require('./routes/admin');
+const adminRoutes = require("./routes/admin");
 const shopRoutes = require('./routes/shop');
 const ejs = require("ejs");
 
@@ -13,7 +13,7 @@ app.set('view engine','ejs');
 app.set('views','views');
 
 app.use(bodyParser.urlencoded({extended: false}));
-app.use('/admin',AdminData.router);
+app.use('/admin',adminRoutes.router);
 app.use('/shop',shopRoutes);
 app.use(express.static(path.join(__dirname,'public')));
 
