@@ -63,7 +63,11 @@ sequelize
   })
   .then(user=>{
     //console.log(user);
-    return user.createCart();
+    const cart =user.getCart()
+    if(!cart){
+        return user.createCart();
+    }
+    return cart;
   })
   .then(cart=>{
     app.listen(3000);
