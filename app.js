@@ -55,11 +55,9 @@ app.use(authRoutes);
 app.use(errorController.get404);
 
 mongoose
-  .connect(
-    "mongodb+srv://lecislav:usZSIcaVCbS1WPxK@cluster0.cehtsby.mongodb.net/?retryWrites=true&w=majority"
-  )
-  .then((result) => {
-    User.findOne().then((user) => {
+  .connect(MONGODB_URI)
+  .then(result => {
+    User.findOne().then(user => {
       if (!user) {
         const user = new User({
           name: 'Max',
